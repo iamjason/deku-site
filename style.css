@@ -1,0 +1,68 @@
+:root {
+  --bg: #f6f6f8;
+  --card: #ffffff;
+  --ink: #1d1d1f;
+  --muted: #6e6e73;
+  --line: #e2e2e7;
+  --indigo: #5b5bf0;
+  --indigo-deep: #3f3fd8;
+  --mint: #79f0c6;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111114;
+    --card: #1b1b20;
+    --ink: #f5f5f7;
+    --muted: #98989f;
+    --line: #2c2c33;
+    --indigo: #6e6ef5;
+    --indigo-deep: #5656e6;
+  }
+}
+* { box-sizing: border-box; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main { max-width: 960px; margin: 0 auto; padding: 24px; }
+.hero { text-align: center; padding: 72px 0 40px; }
+.icon { filter: drop-shadow(0 12px 24px rgba(63, 63, 216, 0.28)); }
+h1 {
+  font-size: 56px; letter-spacing: -0.02em; font-weight: 700; margin-top: 20px;
+}
+.tagline { color: var(--muted); font-size: 22px; margin: 6px 0 30px; }
+.download {
+  display: inline-block; padding: 13px 26px; border-radius: 12px;
+  background: var(--indigo); color: #fff;
+  text-decoration: none; font-weight: 600; font-size: 17px;
+  box-shadow: 0 6px 18px rgba(91, 91, 240, 0.35);
+  transition: background 120ms ease, transform 120ms ease;
+}
+.download:hover { background: var(--indigo-deep); transform: translateY(-1px); }
+.fineprint { color: var(--muted); font-size: 13px; margin-top: 14px; }
+.shot { padding: 8px 0 40px; }
+.shot img {
+  display: block; width: 100%; border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+.features {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 16px; padding: 8px 0 48px;
+}
+.feature {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px;
+}
+.feature h2 { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+.feature h2::before {
+  content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--mint); margin-right: 10px; vertical-align: 2px;
+  box-shadow: 0 0 0 3px rgba(121, 240, 198, 0.25);
+}
+.feature p { color: var(--muted); font-size: 15px; }
+footer { text-align: center; color: var(--muted); font-size: 13px; padding: 40px 0 24px; border-top: 1px solid var(--line); }
+footer a { color: var(--indigo); text-decoration: none; }
+footer a:hover { text-decoration: underline; }

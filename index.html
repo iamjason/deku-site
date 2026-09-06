@@ -4,9 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Deku — a Git client that feels like a Mac app</title>
-  <meta name="description" content="Deku is a native macOS Git client: commit graph, staging, diffs, and a real terminal for git's own output.">
+  <meta name="description" content="Deku is a native macOS Git client for Apple silicon: a fast commit graph, precise staging, readable diffs, and every repository in one window.">
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css">
+  <meta property="og:title" content="Deku — a Git client that feels like a Mac app">
+  <meta property="og:description" content="Native macOS Git client: a fast commit graph, hunk and line staging, readable diffs, and every repository in one window.">
+  <meta property="og:image" content="assets/shots/graph.webp">
+  <meta property="og:type" content="website">
 </head>
 <body>
   <main>
@@ -14,44 +18,161 @@
       <img class="icon" src="assets/deku-icon.png" alt="Deku app icon: a pixel-art Deku Tree with glowing fruit on an indigo tile" width="160" height="160">
       <h1>Deku</h1>
       <p class="tagline">A Git client that feels like a Mac app.</p>
-      <a class="download" href="https://github.com/iamjason/deku-site/releases/latest">Download for macOS · v0.2.3</a>
+      <a class="download" href="#download">Download for macOS · v0.2.3</a>
       <p class="fineprint">Requires macOS 15+ · Apple Silicon · Signed and notarized</p>
     </header>
 
-    <section class="shot">
-      <img src="assets/screenshot.png" alt="Screenshot of Deku showing the commit graph, sidebar, and detail pane for a repository">
+    <section class="shot hero-shot">
+      <img src="assets/shots/graph.webp" width="2048" height="1280" alt="Deku showing the commit graph for a repository: coloured lanes, merge commits, branch and tag badges, and a commit detail pane below.">
     </section>
 
     <section class="features">
       <div class="feature">
-        <h2>Native, top to bottom</h2>
-        <p>Swift 6, SwiftUI and AppKit. System fonts, system controls, system density. No web view anywhere.</p>
+        <h2>A real Mac app</h2>
+        <p>System fonts, system controls, system density, full dark mode. No web view, no Electron, no cross-platform compromise.</p>
       </div>
       <div class="feature">
         <h2>A graph that keeps up</h2>
-        <p>Thousands of commits in a virtualized table with stable lane colours, merges, tags and refs inline.</p>
+        <p>Thousands of commits and still smooth. Branch lanes hold their colour, and merges, tags and refs sit on the row they belong to.</p>
       </div>
       <div class="feature">
         <h2>Stage the way you think</h2>
-        <p>Stage files, hunks or single lines. Stashes, conflicts and untracked files live in one Changes view.</p>
+        <p>Stage a file, a hunk or a single line. Stashes, conflicts and untracked files all live in one Changes view.</p>
       </div>
       <div class="feature">
-        <h2>Git's own output, verbatim</h2>
-        <p>Pushes, pulls and credential prompts run in a real terminal emulator, so progress and colour look exactly as they do in your shell.</p>
+        <h2>Nothing lost in translation</h2>
+        <p>Fetches, pushes and credential prompts show you what git actually said — colour, progress and the real error text.</p>
       </div>
       <div class="feature">
         <h2>Diffs you can read</h2>
-        <p>Syntax highlighting, expandable context, and side-by-side or unified views modelled on Xcode's comparison editor.</p>
+        <p>Syntax highlighting, context you can expand a few lines at a time, and a side-by-side view when you need both revisions at once.</p>
       </div>
       <div class="feature">
         <h2>Every repo in one window</h2>
-        <p>Safari-style tabs for your repositories, restored across launches. Drag a branch to merge, rebase or check out.</p>
+        <p>Tabs for your repositories, restored across launches. Drag a branch onto another to merge, rebase or check out.</p>
+      </div>
+    </section>
+
+    <section class="tour" id="tour">
+      <h2 class="section-title">A look around</h2>
+
+      <figure class="panel">
+        <img src="assets/shots/ocarina.webp" width="2048" height="1280" loading="lazy"
+             alt="A library's history: the trunk on one lane, a long-lived 1.x maintenance branch running beside it the whole height of the window, release tags on the merges.">
+        <figcaption>
+          <h3>Follow a branch through a crowd</h3>
+          <p>A lane keeps its colour for the life of a branch, so a maintenance line that has run
+          beside <code>main</code> for two years stays one thread instead of scattering across the
+          window. Releases, hotfixes and the merges back sit on the row they happened on, next to
+          who did it and when.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="panel">
+        <img src="assets/shots/staging.webp" width="2048" height="1280" loading="lazy"
+             alt="The Changes view: unstaged files above, staged files below, a syntax-highlighted diff on the right, and a commit message being written at the bottom.">
+        <figcaption>
+          <h3>Commit what you meant to commit</h3>
+          <p>Unstaged above, staged below, and the diff for whichever file you are on beside them.
+          Take the whole file, one hunk, or a single line — and write the message while the change
+          is still in front of you, so nothing rides along by accident.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="panel">
+        <img src="assets/shots/split-diff.webp" width="2048" height="1280" loading="lazy"
+             alt="The same file shown as a side-by-side diff, old revision on the left, new on the right, with added lines highlighted.">
+        <figcaption>
+          <h3>Unified or side-by-side, one keystroke apart</h3>
+          <p>Read a change as one column or two, whichever suits the screen you are on. Neither view
+          gives anything up: the same highlighting, the same word-level marks inside a changed line,
+          the same context to pull in when you need more of it.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="panel">
+        <img src="assets/shots/refs.webp" width="2048" height="1280" loading="lazy"
+             alt="The sidebar showing branches grouped into folders by prefix — feat, hotfix, perf, release, spike — with the current branch marked.">
+        <figcaption>
+          <h3>Twenty-three branches, five folders</h3>
+          <p>Branches sharing a prefix collapse into folders and sort by when you last touched them,
+          so a busy repository stays a short list. Stashes, tags, remotes, submodules and worktrees
+          are each one click away, and one filter field narrows whichever you are looking at.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="panel">
+        <img src="assets/shots/activity.webp" width="2048" height="1378" loading="lazy"
+             alt="The Activity window listing recent git operations with their timing and status, and the full output of the selected one.">
+        <figcaption>
+          <h3>See exactly what git said</h3>
+          <p>Every fetch, push, commit and stash is listed with how long it took and whether it
+          worked, and picking one shows git's own output the way your shell would have printed it.
+          When something fails you get the real message, not a friendly paraphrase of it.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="panel">
+        <img src="assets/shots/tabs.webp" width="2048" height="1280" loading="lazy"
+             alt="Three repositories open as tabs in one Deku window, with the third selected and its own history showing.">
+        <figcaption>
+          <h3>One window, all your repositories</h3>
+          <p>Keep everything you are working on in a single window and switch with a click. Drag to
+          reorder, drag one out to give it a window of its own, and it all comes back at the next
+          launch — each tab on the branch and the view you left it on.</p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="download-section" id="download">
+      <div class="dl-card">
+        <div class="dl-main">
+          <h2>Download Deku</h2>
+          <p class="dl-lead">A signed, notarized build. No installer, no login, no telemetry.</p>
+          <a class="download" href="https://github.com/iamjason/deku-site/releases/latest">Download for macOS · v0.2.3</a>
+          <p class="dl-meta">
+            Version <span class="dl-version">0.2.3</span> ·
+            <span class="dl-size">7.0 MB</span> ·
+            released <time class="dl-date" datetime="2026-09-05">5 September 2026</time>
+          </p>
+        </div>
+        <dl class="dl-specs">
+          <div><dt>Requires</dt><dd>macOS 15 Sequoia or later</dd></div>
+          <div><dt>Architecture</dt><dd>Apple silicon</dd></div>
+          <div><dt>Signing</dt><dd>Developer ID, notarized by Apple</dd></div>
+          <div><dt>Price</dt><dd>Free while it is in early days</dd></div>
+        </dl>
+      </div>
+
+      <div class="dl-grid">
+        <div class="dl-note">
+          <h3>Installing</h3>
+          <ol>
+            <li>Unzip the download — Safari does it for you.</li>
+            <li>Drag <strong>Deku.app</strong> into <strong>Applications</strong>.</li>
+            <li>Open it. Because the build is notarized, Gatekeeper lets it through the first time; there is no right-click-Open dance.</li>
+          </ol>
+        </div>
+        <div class="dl-note">
+          <h3>Updating</h3>
+          <p>Download the new build and replace the old app. Deku keeps its settings and your open
+          tabs in <code>~/Library</code>, so an update comes back to the same desk you left.</p>
+          <p><a href="https://github.com/iamjason/deku-site/releases">Every release, with notes →</a></p>
+        </div>
+        <div class="dl-note">
+          <h3>If something is wrong</h3>
+          <p>Deku never rewrites history you did not ask it to, but it is early software and it is
+          my side project. Keep your backups.</p>
+          <p><a href="mailto:jason.r.garrett@gmail.com?subject=Deku%20bug">Tell me what broke →</a></p>
+        </div>
       </div>
     </section>
 
     <footer>
       <p>A personal project by <a href="https://github.com/iamjason">@iamjason</a>.
       Want access to the source? <a href="mailto:jason.r.garrett@gmail.com?subject=Deku%20access">Ask for an invite</a>.</p>
+      <p class="footnote">Screenshots show demo repositories generated for the purpose. Any resemblance
+      to the kingdom of Hyrule is entirely intentional.</p>
     </footer>
   </main>
 </body>

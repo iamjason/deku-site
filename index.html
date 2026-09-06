@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Deku — a Git client that feels like a Mac app</title>
   <meta name="description" content="Deku is a native macOS Git client for Apple silicon: a fast commit graph, precise staging, readable diffs, and every repository in one window.">
-  <link rel="icon" href="assets/favicon.png">
+  <!-- Icon Composer renders a light and a dark appearance of the app icon; serve the one
+       that matches the reader, the way the Dock does. -->
+  <link rel="icon" href="assets/favicon.png" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="assets/favicon-dark.png" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="style.css">
   <meta property="og:title" content="Deku — a Git client that feels like a Mac app">
   <meta property="og:description" content="Native macOS Git client: a fast commit graph, hunk and line staging, readable diffs, and every repository in one window.">
@@ -15,7 +18,10 @@
 <body>
   <main>
     <header class="hero">
-      <img class="icon" src="assets/deku-icon.png" alt="Deku app icon: a smiling Deku Tree with glowing fruit on its branches, on an indigo tile" width="160" height="160">
+      <picture>
+        <source srcset="assets/deku-icon-dark.png" media="(prefers-color-scheme: dark)">
+        <img class="icon" src="assets/deku-icon.png" alt="Deku app icon: a smiling Deku Tree with glowing fruit on its branches, on an indigo tile" width="160" height="160">
+      </picture>
       <h1>Deku</h1>
       <p class="tagline">A Git client that feels like a Mac app.</p>
       <a class="download" href="#download">Download for macOS · v0.2.5</a>

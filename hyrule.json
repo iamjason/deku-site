@@ -1,0 +1,9 @@
+{
+  "$schema": "https://iamjason.github.io/hyrule-compendium-site/schema/hyrule.schema.json",
+  "name": "Deku",
+  "command": "deku",
+  "tagline": "Makes a tangled Git history readable and staging commits quick.",
+  "status": "beta",
+  "platforms": ["macos"],
+  "docs": "https://iamjason.github.io/deku-site/"
+}

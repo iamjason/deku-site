@@ -5,6 +5,7 @@
   "tagline": "Makes a tangled Git history readable and staging commits quick.",
   "status": "beta",
   "language": "Swift",
+  "icon": "https://iamjason.github.io/deku-site/assets/favicon.png",
   "platforms": [
     "macos"
   ],

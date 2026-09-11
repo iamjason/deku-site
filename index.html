@@ -24,12 +24,12 @@
       </picture>
       <h1>Deku</h1>
       <p class="tagline">A Git client that feels like a Mac app.</p>
-      <a class="download" href="#download">Download for macOS · v0.2.17</a>
+      <a class="download" href="#download">Download for macOS · v0.2.18</a>
       <p class="fineprint">Requires macOS 15+ · Apple Silicon · Signed and notarized</p>
     </header>
 
     <section class="shot hero-shot">
-      <img src="assets/shots/graph.webp" width="2048" height="1280" alt="Deku showing the commit graph for a repository: coloured lanes, merge commits, branch and tag badges, and a commit detail pane below.">
+      <img src="assets/shots/graph.webp" width="2048" height="1280" alt="Deku showing the commit graph for a repository: coloured lanes, merge commits, branch and tag badges, the checked-out commit banded and labelled, and a commit detail pane below.">
     </section>
 
     <section class="features">
@@ -40,6 +40,14 @@
       <div class="feature">
         <h2>A graph that keeps up</h2>
         <p>Thousands of commits and still smooth. Branch lanes hold their colour, and merges, tags and refs sit on the row they belong to.</p>
+      </div>
+      <div class="feature">
+        <h2>Know where you are</h2>
+        <p>The branch you are on is banded in the history and outlined in the sidebar, in a colour you pick. Selection is a separate mark, so moving around never loses the thread.</p>
+      </div>
+      <div class="feature">
+        <h2>Review stacks, not just branches</h2>
+        <p>The Review Graph maps merge requests and what each one waits on, verified against the main you just fetched.</p>
       </div>
       <div class="feature">
         <h2>Stage the way you think</h2>
@@ -98,12 +106,25 @@
 
       <figure class="panel">
         <img src="assets/shots/refs.webp" width="2048" height="1280" loading="lazy"
-             alt="The sidebar showing branches grouped into folders by prefix — feat, hotfix, perf, release, spike — with the current branch marked.">
+             alt="The sidebar showing branches grouped into folders by prefix — docs, feat, hotfix, perf, release, review, spike — with the checked-out branch outlined and a different branch selected.">
         <figcaption>
-          <h3>Twenty-three branches, five folders</h3>
+          <h3>Thirty branches, seven folders</h3>
           <p>Branches sharing a prefix collapse into folders and sort by when you last touched them,
           so a busy repository stays a short list. Stashes, tags, remotes, submodules and worktrees
           are each one click away, and one filter field narrows whichever you are looking at.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="panel">
+        <img src="assets/shots/review-graph.webp" width="2048" height="1280" loading="lazy"
+             alt="The Review Graph: eight merge requests drawn as cards joined by dependency lines, two marked merged, four badged for the next review round, and an inspector showing the selected MR's branch, saved tips and dependencies.">
+        <figcaption>
+          <h3>A stack of merge requests, and what each one waits on</h3>
+          <p>Solid lines are the Git base a merge request was cut from; dashed lines are the extra
+          merges it still has to wait for. Deku checks each one against the main branch you just
+          fetched, so &ldquo;merged&rdquo; means the commit is really there — and the ones whose
+          prerequisites have all landed are badged for the next round. When main moves, replay the
+          whole stack in one recoverable operation instead of rebasing eight branches by hand.</p>
         </figcaption>
       </figure>
 
@@ -135,11 +156,11 @@
         <div class="dl-main">
           <h2>Download Deku</h2>
           <p class="dl-lead">A signed, notarized build. No installer, no login, no telemetry.</p>
-          <a class="download" href="https://github.com/iamjason/deku-site/releases/latest">Download for macOS · v0.2.17</a>
+          <a class="download" href="https://github.com/iamjason/deku-site/releases/latest">Download for macOS · v0.2.18</a>
           <p class="dl-meta">
-            Version <span class="dl-version">0.2.17</span> ·
-            <span class="dl-size">11.8 MB</span> ·
-            released <time class="dl-date" datetime="2026-09-10">10 September 2026</time>
+            Version <span class="dl-version">0.2.18</span> ·
+            <span class="dl-size">12.0 MB</span> ·
+            released <time class="dl-date" datetime="2026-09-11">11 September 2026</time>
           </p>
         </div>
         <dl class="dl-specs">
